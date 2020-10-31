@@ -32,14 +32,14 @@ int main (){
     // printf("Value of 2D array: %p\n", *b); //This is b[0]
     // printf("Name of child array: %p\n", b[0]);
 
-    printf("Value at 0,1 Index: %p\n", *b+1);
-    printf("Value at 0,1 Index: %p\n", &b[0][1]);
+    printf("Address of 0,1 Index: %p\n", *b+1);
+    printf("Address of 0,1 Index: %p\n", &b[0][1]);
     printf("Value at 0,1 Index: %d\n", b[0][1]);
     printf("Add 1 to array name: %d\n", *(*b+ 1));
 
-    printf("Name of 2 array: %p\n", b[1]);
-    printf("Address of 2 array: %p\n", &b[1]);
-    printf("Value of 2 array: %p\n", *(b+1));
+    printf("Name of 2nd array: %p\n", b[1]);
+    printf("Address of 2nd array: %p\n", &b[1]);
+    printf("Value of 2nd array: %p\n", *(b+1));
 
     printf("b[1][2]: %p\n", *(b+1)+2); 
     // In this case the trigger goes inside actual array 

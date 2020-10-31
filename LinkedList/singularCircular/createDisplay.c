@@ -14,10 +14,11 @@ struct Node{
 struct Node *tail;
 
 int main(){
-    createCircularLL();
+    create();
+    display();
 }
 
-void createCircularLL(){
+void create(){
     int choice=1;
     while (choice)
     {
@@ -47,19 +48,15 @@ void display(){
     struct Node *temp;
     if (tail == 0)
     {
-        /* code */
+        printf("List is empty \n");
     }
     else{       
         //tail->next always points to head in case of tail only pointer   
         temp = tail->next;
         do
         {
-            printf("%d", temp->data);
+            printf("%d \n", temp->data);
             temp = temp->next;
-        } while (temp != tail->next);
-        
+        } while (temp != tail->next);   
     }
-    
- 
-    
 }
