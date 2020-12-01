@@ -42,7 +42,7 @@ void deleteFromBeg(){
     }
     else if (temp == tail || temp->next == temp) //There is only one node
     {
-        tail =0;
+        tail = 0;
         free(temp);
     }
     else{
@@ -75,6 +75,32 @@ void deleteFromEnd(){
        free(current);
     }
 }
+
+void deleteFromEndCP(){
+    struct Node *current, *next;
+    current = next = tail->next;
+
+    if (tail == 0)
+    {
+        printf("List is empty \n");
+    }
+    else if (current->next == current) //There is only one node
+    {
+        tail =0;
+        free(current);
+    }
+    else{
+       while (next != tail)
+       {
+            current = next;
+            next = next->next;
+       }
+       current->next = next->next;
+       tail = current;
+       free(next);
+    }
+}
+
 
 void deleteFromPos(){
     struct Node *currentNode, *nextNode;

@@ -7,26 +7,23 @@
 When creating a circular linked list we can create a tail pointer.
 In tail pointer the next will always contain the head pointers address
 */
-struct Node{
+typedef struct Node{
     int data;
     struct Node *next;
-};
-struct Node *tail;
+}Node;
 
-int main(){
-    create();
-    display();
-}
+Node *tail;
 
 void create(){
     int choice=1;
     while (choice)
     {
-        struct Node *newNode;
-        newNode = (struct Node *)malloc(sizeof(struct Node));
+        Node *newNode;
+        newNode = (Node *)malloc(sizeof(Node));
 
         printf("Enter data\n");
         scanf("%d", &newNode->data);
+        newNode->next = 0;
         if (tail == 0)
         {
             tail= newNode;
@@ -45,7 +42,7 @@ void create(){
 }
 
 void display(){
-    struct Node *temp;
+    Node *temp;
     if (tail == 0)
     {
         printf("List is empty \n");
@@ -59,4 +56,9 @@ void display(){
             temp = temp->next;
         } while (temp != tail->next);   
     }
+}
+
+int main(){
+    create();
+    display();
 }
