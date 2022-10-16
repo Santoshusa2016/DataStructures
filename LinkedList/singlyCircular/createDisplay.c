@@ -4,7 +4,7 @@
 /*
 2.14 Circular linked list in data structure
 2.15 Implementation of circular linked list
-When creating a circular linked list we can create a tail pointer.
+When creating a circular linked list we can maintain a tail pointer.
 In tail pointer the next will always contain the head pointers address
 */
 typedef struct Node{
@@ -15,7 +15,7 @@ typedef struct Node{
 Node *tail;
 
 void create(){
-    int choice=1;
+    int choice = 1;
     while (choice)
     {
         Node *newNode;

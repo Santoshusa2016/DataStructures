@@ -1,12 +1,15 @@
 #include <stdio.h>
 #define Max 5
+
 int main(){
     int a[Max];
     int b[] = {9,8,4,0,7};
     char name[7] = {'s','a','n', 't', 'o', 's', 'h'}; 
     int n, i, size;
+    
     printf("Enter number of elements in array \n");
     scanf("%d", &size);
+    
     for (i = 0; i < size; i++)
     {
         scanf("%d", &a[i]);
@@ -17,9 +20,9 @@ int main(){
     printf("Value at base address:%d\n", *a);
 
     //Print value using pointer
-    printf("Value at position 2 using pointer: %d\n", *(a+2));
-    printf("Value at position 2 using index: %d\n", a[2]);
-    printf("Value at position 2 using array name: %d\n", 2[a]);
+    printf("Value at index 2 using pointer: %d\n", *(a+2));
+    printf("Value at index 2 using index: %d\n", a[2]);
+    printf("Value at index 2 using array name: %d\n", 2[a]);
 
     //Add number to Address
     printf("Add 1 to array name: %p\n", a+1);
@@ -30,12 +33,12 @@ int main(){
     printf("Add 1 to value of base address: %d\n", *a+1);
     
     //Address Calculation   
-    int *baseAddress = &a[0];
+    int *baseAddress = a;
     printf("int array address calcution: Manual\n");
     for (i = 1; i < size; i++)
     {
         baseAddress = baseAddress + 1;
-        printf("%p\n", baseAddress);
+        printf("i%p\n", baseAddress);
     }
     printf("int array address calcution: Auto\n");
     for (i = 0; i < size; i++)

@@ -11,16 +11,15 @@ struct Node *head, *temp;
 
 void Create(){
     struct Node *newNode;
-    int choice = 1;
+    int choice = 3;
 
     while (choice)
     {
         newNode = (struct Node *)malloc(sizeof(struct Node));
         //Malloc will return pointer to the 1 byte of the element
-
         printf("Enter the element");
         scanf("%d", &newNode->data);
-        (*newNode).previous = (*newNode).next = 0;
+        (*newNode).previous = (*newNode).next = 0; //instead of &newNode->data
 
         if (head == 0)
         {

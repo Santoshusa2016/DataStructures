@@ -38,6 +38,7 @@ void create(){
             temp->next = newNode;
             temp = newNode;
         }
+        //setting tail and head
         temp->next = head;
         tail = temp;
 

@@ -11,7 +11,7 @@ struct Node
     struct Node *next;
 }*tail;
 
-display(){
+void display(){
     struct Node *temp;
     temp = tail->next;
     do
@@ -22,11 +22,12 @@ display(){
     
 }
 
-createNode(){
-    int choice = 1;
+void createNode(){
+    int choice = 0;
     struct Node *newNode;
     newNode = (struct Node *)malloc(sizeof(struct Node));
-    while (choice == 1)
+
+    while (choice <= 4)
     {
         scanf("Please enter data %d:", &newNode->data);
         if (tail == 0)
@@ -40,12 +41,10 @@ createNode(){
             tail->next = newNode;
             tail = newNode;
         }    
-        printf("Do you want to continue ?\n");
-        scanf("%d", &choice);   
-        
+        choice++;
     }
     
-    printf("Call from createNode: Normal Order \n");
+    //printf("Call from createNode: Normal Order \n");
     display();
 }
 
@@ -62,26 +61,21 @@ void reverseNode(){
         printf("there is only one node in the list");
     }
     else{
-        while (current != tail)
+        while (current != tail->next)
         {
             next = current->next;
             current->next = previous;
             previous = current;
             current = next;
         }
-        next = current->next;
-        current->next = previous;
         tail = next;
     }
     printf("Call from reverseNode: Reverse Order \n");
     display();
 }
 
-
-
-
 int main(){
     createNode();
-    reverseNode();
+    // reverseNode();
 }
 

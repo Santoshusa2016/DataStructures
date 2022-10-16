@@ -3,6 +3,7 @@
 
 /*
 2.11 Insertion in Doubly linked list(beginning, end, specific position)
+Maintain both the head pointer when creating doubly linked list
 2.12 Deletion from doubly linked list (beginning, end, specific position)
 */
 struct Node{
@@ -26,11 +27,12 @@ void createDoublyLL(){
     int i = 0;
 
     printf("Enter data:\n");
-    while (i < 5)
+    while (i < 3)
     {
         newNode = (struct Node *)malloc(sizeof(struct Node));        
         scanf("%d", &newNode->data);
         newNode->next = newNode->previous = 0;
+        
         if (head == 0)
         {
             head = tail = newNode;
@@ -48,11 +50,13 @@ void createDoublyLL(){
     
 void insertatBeg(){
     printf("Start: insertatBeg \n");
+    
     struct Node *newNode;
     newNode = (struct Node *)malloc(sizeof(struct Node));
+    
     printf("Enter Node data \n");
     scanf("%d", &newNode->data);
-    newNode->next = newNode->previous = 0;
+    &newNode->next = &newNode->previous = 0;
 
     head->previous = newNode;
     newNode->next = head;
@@ -66,6 +70,7 @@ void insertatEnd(){
     printf("Start: insertatEnd \n");
     struct Node *newNode;
     newNode = (struct Node *)malloc(sizeof(struct Node));
+    
     printf("Enter data for end node \n");
     scanf("%d", &newNode->data);
     newNode->next = newNode->previous = 0;
@@ -74,7 +79,6 @@ void insertatEnd(){
     newNode->previous = tail;
     tail = newNode;
 
-    printNode();
     printf("End: insertatEnd \n");
 }
 
